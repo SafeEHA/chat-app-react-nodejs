@@ -27,7 +27,7 @@ jobs:
         with:
             context: ./server
             file: ./server/Dockerfile
-            tags: ghcr.io/safeeha/backend-app:${{ github.sha }}
+            tags: ghcr.io/safeeha/backend:latest
             push: ${{ github.ref == 'refs/heads/main' }}
 
       - name: Build and push frontend image
@@ -35,5 +35,5 @@ jobs:
         with:
               context: ./public
               file: ./public/Dockerfile
-              tags: ghcr.io/safeeha/frontend-app:${{ github.sha }}
+              tags: ghcr.io/safeeha/frontend:latest
               push: ${{ github.ref == 'refs/heads/main' }}      
